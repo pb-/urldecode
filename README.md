@@ -7,7 +7,7 @@ urldecode is a small special-purpose streaming tokenizer for application/x-www-f
 Usage
 -----
 
-```
+```go
 d := urldecode.NewDecoder(req.Body()) // any io.Reader is fine
 key, value, err := d.NextPair() // err is io.EOF after last pair
 if err != nil {
@@ -23,7 +23,7 @@ FAQ
 ---
 
 **Why would anyone want to use this?**  
-Unfortunately there are services out there which will happily POST 80 megabytes of data as application/x-www-form-urlencoded. This is a problem because most decoders (including the Go standard library) for this kind of data make the (sane) assumption that these data are relatively short and fit easily into memory. With this library, you can get away with a constant amount of memory and stream the data as needed.
+Unfortunately there are services out there which will happily POST 80 megabytes of data as application/x-www-form-urlencoded (hello Mandrill). This is a problem because most decoders (including the Go standard library) for this kind of data make the (sane) assumption that these data are relatively short and fit easily into memory. With this library, you can get away with a constant amount of memory and stream the data as needed.
 
 
 Limitations
