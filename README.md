@@ -22,7 +22,7 @@ io.Copy(os.Stdout, value) // value is an io.Reader
 FAQ
 ---
 
-*Why would anyone want to use this?*
+**Why would anyone want to use this?**  
 Unfortunately there are services out there which will happily POST 80 megabytes of data as application/x-www-form-urlencoded. This is a problem because most decoders (including the Go standard library) for this kind of data make the (sane) assumption that these data are relatively short and fit easily into memory. With this library, you can get away with a constant amount of memory and stream the data as needed.
 
 
