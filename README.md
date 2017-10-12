@@ -28,5 +28,7 @@ Unfortunately there are services out there which will happily POST 80 megabytes 
 
 Limitations
 -----------
+Pull requests welcome. Make sure to maintain 100% test coverage.
 
- * Keys (not values) are currently not being decoded, i.e., `foo%20` will not decode as `foo ` but `foo%20`. Pull requests welcome.
+ * Keys (not values) are currently not being decoded, i.e., `foo%20` will not decode as `foo ` but `foo%20`.
+ * Keys longer than 1023 bytes cannot be parsed.
